@@ -1,0 +1,337 @@
+/* Osnovni stilovi */
+*{
+  margin: 0;
+  padding: 0;
+}
+html, body {
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+/* Logo i povezane strukture */
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+    color: white;
+}
+
+.logo .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    flex-direction: column;
+    font-size: 1rem;
+}
+
+/* Preostali header elementi */
+.search-and-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: left;
+    margin: 0 30px;
+}
+
+.search-bar input {
+    width: 250px;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons img {
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Responsive mobile stilovi */
+@media screen and (max-width: 639px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-and-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    
+    .first {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .right img {
+        width: 100%;
+        height: auto;
+    }
+    
+    .left {
+        width: 90%;
+    }
+    
+    .spot-text {
+        display: none;
+    }
+}
+
+/* Stilovi za uređaje šire od 639px */
+@media (min-width: 640px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: 20px;
+        margin: 10px;
+        align-items: center;
+    }
+}
+
+/* Stilovi za veće uređaje 1024px i više */
+@media (min-width: 1024px) {
+    .first {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding-bottom: 50px;
+        height: 300px;
+        margin: auto;
+    }
+    
+    /* Unutar .first, možemo definisati dodatne stilove za .right i .left, ako je potrebno. */
+    
+    .spot-text {
+        display: block;
+    }
+}
+
+/* .wrapper – primeni jedinstveno pravilo (ako je potrebno) */
+.wrapper {
+    min-height: 100%;
+    height: auto; /* Odluči se: auto ili 100% */
+    margin: 0 auto -4em;
+}
+
+/* Footer stilovi – ako imaš posebne potrebe */
+#footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+/* ====== STILOVI ZA VEĆE UREĐAJE (min-width: 1024px) ====== */
+@media (min-width: 1024px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 kolone */
+      grid-template-rows: repeat(2, auto);    /* 2 reda */
+      gap: 20px;
+      flex-grow: 1;
+      margin: 10px;
+    }
+  
+    .smaikoner {
+      display: flex;
+      justify-content: space-evenly; /* Horizontalno centriranje */
+      align-items: center;           /* Vertikalno centriranje */
+      gap: 20px;
+      padding-bottom: 80px;
+    }
+  
+    /* Također, na uređajima s većim ekranima prikazujemo .spot-text */
+    .spot-text {
+      display: block;
+    }
+  }
+  
+  /* ====== OSNOVNI STILOVI ZA ELEMENTE ====== */
+  
+  /* Spot i pripadajući elementi */
+  .spot {
+    position: relative;
+    width: 100%;    /* Puna širina kolone */
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 90%;
+    height: auto;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .caption-left {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+  
+  .caption-right {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+  }
+  
+  .below-first-word {
+    position: absolute;
+    bottom: -40px;
+    left: 0; /* Može biti prilagođeno */
+  }
+  
+  /* Smali ikone (ikone s tekstom) */
+  .smal {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .smal img {
+    width: 24px;
+    height: auto;
+  }
+  
+  .smal p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Tabela */
+  th,
+  td {
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  
+  table {
+    height: auto;
+    width: auto;
+    border-collapse: separate;
+    border-spacing: 50px 0;
+  }
+  
+  td {
+    padding: 10px 0;
+  }
+  
+  /* Footer osnovni stilovi */
+  #footer {
+    background: #444444;
+    font-family: 'Courier New', Courier, monospace;
+    color: lightgray;
+    padding: 10px;
+    text-align: left;
+    /* Postavi osnovnu visinu; ovdje se na desktop može koristiti fiksna visina,
+       dok će mobilna izdanja (u medijskom upitu) nadjačati tu vrijednost */
+    height: 300px;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  /* ====== STILOVI ZA SREDNJE VELIČINE EKRANA (min-width: 639px) ====== */
+  @media (min-width: 639px) {
+    #footer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 20px;
+    }
+  }
+  
+  /* ====== MOBILNI STILOVI (max-width: 639px) ====== */
+  @media (max-width: 639px) {
+    /* Footer pristupanje i responsiv tabela */
+    #footer {
+      background: #444444;
+      height: auto; /* prilagodljiva visina prema sadržaju */
+      font-family: 'Courier New', Courier, monospace;
+      color: lightgray;
+      padding: 10px;
+      text-align: left;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    thead {
+      display: none; /* Sakrij zaglavlja tabele */
+    }
+  
+    tbody {
+      display: flex;
+      flex-wrap: wrap; /* Omogućava responzivan raspored redova/kolona */
+      justify-content: space-between;
+    }
+  
+    tr {
+      display: flex;
+      flex-direction: column; /* Redovi se prikazuju vertikalno */
+      width: 48%;             /* Svaki red zauzima približno polovinu širine */
+      margin-bottom: 10px;
+    }
+  
+    td {
+      text-align: left;
+      padding: 5px 0;
+      border-bottom: 1px solid #555;
+    }
+  
+    td:before {
+      content: attr(data-label); /* Prikaži naslov kolone kao etiketu */
+      font-weight: bold;
+      display: block;
+    }
+  
+    p {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    /* Sakrij .spot-text na mobilnim uređajima */
+    .spot-text {
+      display: none;
+    }
+  }
+  
