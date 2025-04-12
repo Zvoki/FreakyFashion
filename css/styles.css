@@ -28,32 +28,27 @@ header {
     background-color: white;
     color: white;
 }
-
-.logo .tags {
+.logo {
+  width: 100%;
+  height: auto;
+}
+.logo .icons {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem 2rem;
-    flex-direction: column;
-    font-size: 1rem;
-}
-
-/* Preostali header elementi */
-.search-and-icons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+   
 }
 
 .search-bar {
     flex-grow: 1;
     display: flex;
     justify-content: left;
-    margin: 0 30px;
+    margin: 0 10px;
 }
 
-.search-bar input {
-    width: 250px;
-    max-width: 400px;
+.search-bar > input {
+    width: 50px;
     padding: 10px;
     border: 1px solid;
     border-radius: 20px;
@@ -61,7 +56,8 @@ header {
 
 .icons {
     display: flex;
-    gap: 15px;
+    gap: 1px;
+    background-color: aqua;
 }
 
 .icons img {
@@ -71,21 +67,27 @@ header {
 
 /* Responsive mobile stilovi */
 @media screen and (max-width: 639px) {
-    .navbar {
+  .logo .responsiv {
+    align-items: center;
+  }  
+  .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        left: 20px;
+    }
+    
+    .tags {
         flex-direction: column;
         align-items: flex-start;
     }
-    
-    .nav-links {
-        flex-direction: column;
-        align-items: flex-start;
+    .logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      padding-left: 0;
     }
-    
-    .search-and-icons {
-        justify-content: center;
-        margin-top: 10px;
-    }
-    
     .first {
         display: flex;
         flex-direction: column;
@@ -106,6 +108,36 @@ header {
     .spot-text {
         display: none;
     }
+    .smaikoner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly; /* Horizontalno centriranje */
+      align-items: flex-start;           /* Vertikalno centriranje */
+      gap: 20px;
+      padding-bottom: 10px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      padding-bottom: 50px;
+      gap: 50px;
+  height: auto;
+  width: auto;
+  border: solid 1px red;
+      font-size: 1rem;
+
+  }
+  #footer {
+    background: #444444;
+    font-family: 'Courier New', Courier, monospace;
+    color: lightgray;
+    padding: 10px 20px;
+    text-align: left;
+    height: auto; /* visina se prilagođava sadržaju */
+  }
+    
 }
 
 /* Stilovi za uređaje šire od 639px */
@@ -114,8 +146,6 @@ header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, auto);
-        gap: 20px;
-        margin: 10px;
         align-items: center;
     }
 }
@@ -139,19 +169,13 @@ header {
     }
 }
 
-/* .wrapper – primeni jedinstveno pravilo (ako je potrebno) */
-.wrapper {
-    min-height: 100%;
-    height: auto; /* Odluči se: auto ili 100% */
-    margin: 0 auto -4em;
-}
-
 /* Footer stilovi – ako imaš posebne potrebe */
 #footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding-left: 20px;
+    height: auto;
 }
 /* ====== STILOVI ZA VEĆE UREĐAJE (min-width: 1024px) ====== */
 @media (min-width: 1024px) {
@@ -192,6 +216,7 @@ header {
     position: relative;
     width: 90%;
     height: auto;
+    
   }
   
   .image-container img {
@@ -261,7 +286,7 @@ header {
     text-align: left;
     /* Postavi osnovnu visinu; ovdje se na desktop može koristiti fiksna visina,
        dok će mobilna izdanja (u medijskom upitu) nadjačati tu vrijednost */
-    height: 300px;
+    height: auto;
   }
   
   p {
@@ -288,50 +313,6 @@ header {
       color: lightgray;
       padding: 10px;
       text-align: left;
-    }
-  
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-  
-    thead {
-      display: none; /* Sakrij zaglavlja tabele */
-    }
-  
-    tbody {
-      display: flex;
-      flex-wrap: wrap; /* Omogućava responzivan raspored redova/kolona */
-      justify-content: space-between;
-    }
-  
-    tr {
-      display: flex;
-      flex-direction: column; /* Redovi se prikazuju vertikalno */
-      width: 48%;             /* Svaki red zauzima približno polovinu širine */
-      margin-bottom: 10px;
-    }
-  
-    td {
-      text-align: left;
-      padding: 5px 0;
-      border-bottom: 1px solid #555;
-    }
-  
-    td:before {
-      content: attr(data-label); /* Prikaži naslov kolone kao etiketu */
-      font-weight: bold;
-      display: block;
-    }
-  
-    p {
-      text-align: center;
-      margin-top: 20px;
-    }
-  
-    /* Sakrij .spot-text na mobilnim uređajima */
-    .spot-text {
-      display: none;
     }
   }
   
