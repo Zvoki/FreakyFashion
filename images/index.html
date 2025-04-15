@@ -7,20 +7,21 @@
   <link rel="stylesheet" href="/css/styles.css">
   <title>Projektarbete</title>
 </head>
+
 <body>
   <header>
     <!-- Logo Section -->
     <div class="logo">
       <img src="https://placehold.co/400x200" alt="Logo" class="responsive">
-     <div class="logo-bottom"><!-- Novi kontejner koji grupiše search-bar i icons -->
-      <div class="search-bar">
-        <input type="text" placeholder="Search...">
+      <div class="logo-bottom"><!-- Novi kontejner koji grupiše search-bar i icons -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+        </div>
+        <div class="icons">
+          <img src="suit-heart-fill.svg" alt="Hjärta">
+          <img src="basket2.svg" alt="Väska">
+        </div>
       </div>
-      <div class="icons">
-        <img src="suit-heart-fill.svg" alt="Hjärta">
-        <img src="basket2.svg" alt="Väska">
-      </div>
-    </div>
     </div>
     <!-- Navbar Section kao sibling -->
     <div class="navbar">
@@ -31,7 +32,7 @@
         <li><a href="#Män">Män</a></li>
       </ul>
     </div>
-  <!-- Objašnjenje
+    <!-- Objašnjenje
 HTML struktura:
 Unutar <div class="logo"> imamo prvo logotip (sliku) zatim kontejner .logo-bottom koji
 sadrži dva bloka: jedan za pretragu (.search-bar) i drugi za ikone (.icons).
@@ -137,7 +138,29 @@ CSS raspored:
   </main>
 
   <div id="footer">
-    <table>
+    <!-- Mobilni prikaz: struktura sidebar menija (prikazuje se na ekranima ispod 640px) -->
+    <div class="menu mobile-menu">
+      <div class="menu-section">
+        <h2>Shopping</h2>
+        <ul>
+          <li>Vinterjackor</li>
+          <li>Puffjackor</li>
+          <li>Kappa</li>
+          <li>Trenchcoats</li>
+        </ul>
+      </div>
+      <div class="menu-section">
+        <h2>Mina Sidor</h2>
+        <ul>
+          <li>Mina Ordrar</li>
+          <li>Mitt Konto</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Desktop prikaz: originalna tabela sa dve kolone (prikazuje se na ekranima sa 
+ širinom 640px i više) -->
+    <table class="menu desktop-menu">
       <thead>
         <tr>
           <th>Shopping</th>
@@ -147,7 +170,7 @@ CSS raspored:
       <tbody>
         <tr>
           <td>Vinterjackor</td>
-          <td>Mina Order</td>
+          <td>Mina Ordrar</td>
         </tr>
         <tr>
           <td>Puffjackor</td>
@@ -164,6 +187,7 @@ CSS raspored:
       </tbody>
     </table>
     <p>&copy; Freaky Fashon</p>
-  </div> 
+  </div>
 </body>
+
 </html>
