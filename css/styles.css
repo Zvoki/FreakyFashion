@@ -9,7 +9,8 @@ img {
   max-width: 100%;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
@@ -34,10 +35,12 @@ header {
   width: 100%;
   margin-bottom: 20px;
 }
+
 .logo-bottom {
   display: flex;
-  flex-direction: row;      
-  justify-content: space-between; /* rasporedi elemente levo i desno */
+  flex-direction: row;
+  justify-content: space-between;
+  /* rasporedi elemente levo i desno */
   align-items: center;
   width: 100%;
   margin: 10px;
@@ -50,24 +53,24 @@ header {
   align-self: center;
   flex-wrap: wrap;
   /*gap: 10px 20px;*/
- flex-direction:row;
+  flex-direction: row;
 }
 
-.logo > img {
+.logo>img {
   width: 100%;
   height: fit-content;
-
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* Poravnaj na levoj strani */
+  justify-content: flex-start;
+  /* Poravnaj na levoj strani */
   padding-top: 0;
   margin: 0;
 }
 
-.search-bar > input {
+.search-bar>input {
   width: 200px;
   padding: 10px;
   border: 1px solid;
@@ -75,13 +78,13 @@ header {
 }
 
 .icons {
-display: flex;
-align-items: center;
-justify-content: flex-end;
-gap: 1px; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1px;
 }
 
-.icons > img {
+.icons>img {
   height: 30px;
   cursor: pointer;
 }
@@ -124,8 +127,9 @@ gap: 1px;
   padding: 30px;
   border: 1px solid yellow;
 }
-.left > p {
-padding-top: 10px;
+
+.left>p {
+  padding-top: 10px;
 }
 
 .spot-text {
@@ -183,7 +187,8 @@ padding-top: 10px;
   align-self: center;
   left: 20px;
 }
-.smal{
+
+.smal {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -198,16 +203,20 @@ padding-top: 10px;
   text-align: left;
   height: auto;
 }
+
 /* Po defaultu – akcentiramo mobilni prikaz */
 .mobile-menu {
   display: block;
 }
+
 .desktop-menu {
   display: none;
 }
-.menu-section > ul {
+
+.menu-section>ul {
   list-style: none;
 }
+
 /* Stilovi za sekciju smaikoner */
 .smaikoner {
   display: flex;
@@ -218,39 +227,132 @@ padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
 }
-#footer > p {
+
+#footer>p {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-/* Media query – uređaji šire od 639px */
+
 @media (min-width: 640px) {
-  .container {
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* Možeš isprobati flex-start ili space-around ako je potrebno */
+
+    gap: 20px;
+  }
+
+  .logo-bottom {
+    width: auto;
+  }
+
+  .logo>img {
+    align-items: flex-start;
+    width: 200px;
+    height: 100px;
+  }
+
+  .search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+  }
+
+  .search-bar input {
+    width: 150px;
+    max-width: 200px;
+    padding: 10px;
+    border: solid;
+    border-radius: 20px;
+  }
+
+  .icons {
+    display: flex;
+    gap: 15px;
+    justify-content: end;
+  }
+
+  .icons img {
+    height: 30px;
+    cursor: pointer;
+    flex-direction: row;
+  }
+
+
+  /* Navigacija (.navbar .tags) ispod, u jednom redu */
+  .navbar .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    padding-left: 10px;
+    list-style: none;
+  }
+
+  /*.first {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid green;
+    gap: 10px;*/
+
+
+  /* .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
     align-items: center;
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .desktop-menu {
-    display: table;
-    width: 100%;
-    border-collapse: collapse; /* Opcionalno: radi urednijeg izgleda */
+  }*/
+}
+
+/*.image-container > img {
+  height: 400px;
+  width: 400px;
+}*/
+/*Media query – uređaji šire od 1024px */
+@media (min-width: 1024px) {
+  /* Preuredimo .logo kontejner u horizontalni raspored */
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
   
-  .desktop-menu th,
-  .desktop-menu td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+  /* Opcionalno, ako želiš fiksnu širinu ili drugačije dimenzije za logo sliku */
+  .logo > img {
+    width: auto;         /* ili neki fiksni width: 200px; */
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* .logo-bottom sada treba biti u jednom redu */
+  .logo-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 20px;    /* mali razmak između loga i ostatka */
+  }
+  
+  /* Pretraživač – koristi ostatak prostora, a desnom strani dodaj razmak */
+  .search-bar {
+    flex-grow: 1;
+    margin: 0 30px 0 0;   /* razmak samo s desne strane */
+  }
+  
+  /* Ikone – poravnaj ih u desni ugao */
+  .icons {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
-/* Media query – uređaji šire od 1024px */
-@media (min-width: 1024px) {
-  .first {
+/* .first {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -258,30 +360,29 @@ padding-top: 10px;
     padding-bottom: 50px;
     height: 300px;
     margin: auto;
-    
-  }
-  
-  .spot-text {
+  }*/
+
+/*.spot-text {
     display: block;
-  }
-  
-  .container {
+  }*/
+
+/* .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
     gap: 20px;
     flex-grow: 1;
     margin: 10px;
-  }
-  
-  .smaikoner {
+  }*/
+
+/*.smaikoner {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 20px;
     padding-bottom: 80px;
   }
-  
+
   .spot-text {
     display: block;
   }
