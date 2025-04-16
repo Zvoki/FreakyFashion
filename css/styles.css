@@ -323,7 +323,8 @@ header {
     justify-content: space-between;
   }
   
-  /* Opcionalno, ako želiš fiksnu širinu ili drugačije dimenzije za logo sliku */
+  /* Opcionalno, ako želiš fiksnu širinu ili drugačije dimenzije 
+  za logo sliku */
   .logo > img {
     width: auto;         /* ili neki fiksni width: 200px; */
     max-width: 100%;
@@ -339,10 +340,12 @@ header {
     margin-left: 20px;    /* mali razmak između loga i ostatka */
   }
   
-  /* Pretraživač – koristi ostatak prostora, a desnom strani dodaj razmak */
+  /* Pretraživač – koristi ostatak prostora, a desnom strani 
+  dodaj razmak */
   .search-bar {
     flex-grow: 1;
     margin: 0 30px 0 0;   /* razmak samo s desne strane */
+
   }
   
   /* Ikone – poravnaj ih u desni ugao */
@@ -350,6 +353,18 @@ header {
     display: flex;
     justify-content: flex-end;
   }
+  /*Desktop prilagodbe: U media query-ju za 1024px mijenjamo 
+  raspored:
+.logo se postavlja u red (flex-direction: row) da bi se slika i 
+.logo-bottom prikazivali jedan pored drugog.
+.logo-bottom se također pretvara u flex red kako bi se unutra 
+stavili .search-bar i .icons u jednoj liniji.
+.search-bar koristi flex-grow: 1 da zauzme preostali prostor,
+ a marginom spriječava da se lijepi uz ikone.
+.icons ostaju na kraju (desna strana) zahvaljujući 
+justify-content: flex-end.
+Ovim pristupom postižeš responzivni design koji će se ponašati 
+drugačije u zavisnosti od veličine ekrana, a tvoj kod ostaje čist i modularan.*/
 }
 
 /* .first {
