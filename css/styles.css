@@ -149,6 +149,7 @@ header {
 }
 
 .left-caption {
+  border: 3px solid red;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -166,8 +167,12 @@ header {
 }
 
 .right-caption {
+  border: 3px solid seagreen;
+  display: flex;
+  align-self: start;
   font-size: 0.9rem;
   color: #ff0000;
+
 }
 
 /* Container – raspored proizvoda */
@@ -186,6 +191,9 @@ header {
 .container .image-container {
   align-self: center;
   left: 20px;
+}
+.item-extra {
+  display: none;
 }
 
 .smal {
@@ -292,22 +300,56 @@ header {
     list-style: none;
   }
 
-  /*.first {
+  .first {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
     border: 3px solid green;
-    gap: 10px;*/
+    gap: 10px;
+  }
+  .right img {
+    width: 600px;
+    height: auto;
+    border: 1px solid black;
+  }
+  .left {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid yellow;
+  }
+  .left> p {
+    padding-top: 10px;
+  }
 
-
-  /* .container {
+   .container {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(4, minmax(100px, auto));
     align-items: center;
-  }*/
+  }
+  .item-extra {
+    display: block;
+  }
+  .smaikoner {
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    grid-template-rows:repeat(2, minmax(10px, auto)) ;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;  /* Fixed height to see the effect of align-content */
+    padding: 0 20px;/* 0 za vertikalni padding, 20px za levi i desni padding */
+    /*gap: 10px;*/
+    border: 2px solid #333;
+    margin-bottom: 0;
+    box-sizing: border-box;
+  }
+  .smal> img {
+  padding: 10px;  
+   }
 }
 
 /*.image-container > img {
