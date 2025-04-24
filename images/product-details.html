@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Detaljerad produkt</title>
+</head>
+
+<body>
+    <header>
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="/images/300x100.svg" alt="Logo" class="responsive">
+            <div class="logo-bottom"><!-- Novi kontejner koji grupiše search-bar i icons -->
+                <div class="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="icons">
+                    <img src="suit-heart-fill.svg" alt="Hjärta">
+                    <img src="basket2.svg" alt="Väska">
+                </div>
+            </div>
+        </div>
+        <!-- Navbar Section kao sibling -->
+        <div class="navbar">
+            <ul class="tags">
+                <li><a href="#hem">Hem</a></li>
+                <li><a href="#Bestsäljare">Bestsäljare</a></li>
+                <li><a href="#Kvinnor">Kvinnor</a></li>
+                <li><a href="#Män">Män</a></li>
+            </ul>
+        </div>
+        <!-- Objašnjenje
+    HTML struktura:
+    Unutar <div class="logo"> imamo prvo logotip (sliku) zatim kontejner .logo-bottom koji
+    sadrži dva bloka: jedan za pretragu (.search-bar) i drugi za ikone (.icons).
+    CSS raspored:
+    .logo je postavljen u kolonu pomoću flex-direction: column, pa se logo (slika)
+     pojavljuje na vrhu, a ispod njega svi ostali elementi.
+    .logo-bottom je zaseban flex kontejner s flex-direction: row koji raspoređuje
+     pretragu i ikone u jednom redu. Koristili smo justify-content: space-between kako 
+     bi se pretraga pozicionirala levo, a ikone desno.-->
+    </header>
+    <main>
+        <!--Glavni kontejner za proizvod -->
+        <article class="product-display">
+            <!--Slika proizvoda-->
+            <section class="produkt-image">
+                <img src="300x400.svg" alt="T-Shirt">
+            </section>
+            <!--Naziv proizvoda-->
+            <section class="produkt-info">
+                <h2 class="produkt-name">Svart T-Shirt</h2>
+                <!--Marka proizvoda-->
+                <p class="brand">Levis</p>
+            </section>
+            <!--Opis proizvoda-->
+            <section class="produkt-description">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, ut odit quo libero, tempora
+                    officia id dolore perspiciatis architecto cumque ratione? Laborum, ad! Recusandae nostrum,
+                    necessitatibus nemo quisquam consequuntur sequi.</p>
+            </section>
+            <!--Cijena-->
+            <section class="produkt-pris">
+                <p>199 SEK</p>
+                <button>Lägg i Varukorg</button>
+            </section>
+            </section>
+            </section>
+        </article>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
