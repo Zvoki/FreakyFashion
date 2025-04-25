@@ -3,6 +3,25 @@
   margin: 0;
   padding: 0;
 }
+/* Osnovni stilovi za mobilne uređaje (default: ispod 640px) */
+html {
+  font-size: 16px; /* Osnovna veličina - 1rem = 16px */
+}
+
+p {
+  font-size: 1rem;   /* 16px */
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h2 {
+  font-size: 2rem;   /* 32px */
+}
+h1 {
+  font-size: 2.5rem;
+}
 
 img {
   display: block;
@@ -13,7 +32,6 @@ html,
 body {
   height: 100%;
   font-family: 'Courier New', Courier, monospace;
-  margin: 0;
 }
 
 /* Header stilovi */
@@ -94,16 +112,22 @@ header {
   height: auto;
 }
 
-.navbar {
-  flex-direction: column;
-  align-items: flex-start;
+.navbar { 
+  flex-direction: column; 
+  align-items: flex-start; 
 }
-
-.navbar .tags {
+ .navbar .tags { 
   flex-direction: column;
-  padding-left: 10px;
-  list-style: none;
-}
+   padding-left: 10px; 
+   list-style: none; 
+  } 
+ .navbar ul.tags {
+   display: flex;
+   gap: 3px;
+   margin: 0;
+   padding: 0; 
+   list-style: none; 
+  }
 
 /* Stilovi za sekciju .first */
 .first {
@@ -196,7 +220,15 @@ header {
 .item-extra {
   display: none;
 }
-
+/* Stilovi za sekciju smaikoner */
+.smaikoner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 10px 0 10px 10px; /*top, right, bottom i left*/
+}
 .smal {
   display: flex;
   align-items: center;
@@ -235,17 +267,6 @@ li {
   padding: 10px;
 }
 
-/* Stilovi za sekciju smaikoner */
-.smaikoner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 20px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-}
-
 #footer>p {
   text-align: center;
   padding-top: 20px;
@@ -253,13 +274,26 @@ li {
 }
 
 @media (min-width: 640px) {
+  p {
+    font-size: 1.1rem;   /* Primer: oko 17.6px */
+  }
+
+  h3 {
+    font-size: 1.75rem;  /* Primer: oko 28px */
+  }
+
+  h2 {
+    font-size: 2.25rem;  /* Primer: oko 36px */
+  }
+  h1 {
+    font-size: 2.50rem;
+  }
 
   .logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     /* Možeš isprobati flex-start ili space-around ako je potrebno */
-
     gap: 20px;
   }
 
@@ -401,6 +435,20 @@ li {
 }*/
 /*Media query – uređaji šire od 1024px */
 @media (min-width: 1024px) {
+  p {
+    font-size: 1.125rem;   /* Primer: oko 18px */
+  }
+
+  h3 {
+    font-size: 2rem;       /* Primer: 32px */
+  }
+
+  h2 {
+    font-size: 2.5rem;     /* Primer: 40px */
+  }
+  h1 {
+    font-size: 3rem;
+  }
 
   /* Preuredimo .logo kontejner u horizontalni raspored */
   .logo {
@@ -508,5 +556,52 @@ drugačije u zavisnosti od veličine ekrana, a tvoj kod ostaje čist i modularan
   .desktop-menu {
     display: block;
   }
+}
+/*Produkt-details sidan, mobile first*/
+.product-display {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;/* poravnava sve elemente levo */
+ padding: 20px;
+ background-color: bisque;
+ border: solid 2px black;
+}
+.produkt-image >img {
+  align-self: center;
+  width: 400px;
+  height: auto;
+  margin-bottom: 15px;
+}
+.produkt-info {
+  padding: 10px; /* Možeš dodati malo paddinga ili marginu po potrebi */
+}
+
+.produkt-description {
+  padding-left: 10px;
+
+}
+.produkt-pris {
+ /* align-self: start;*/
+  padding-left: 10px;
+}
+.produkt-pris > button {
+ text-align: center;
+  width: 300px;
+  height: 30px;
+  margin-top: 10px;
+}
+@media (min-width: 640px) {
+  .product-display {
+    display: grid;
+    grid-template-rows:repeat(6, minmax(10px, auto));
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    gap:10px;
+  
+   }
+   /*.produkt-description {
+    padding-left: 10px;
+    align-self: center;
+  }*/
 }
 

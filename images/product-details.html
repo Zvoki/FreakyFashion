@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
@@ -33,47 +33,120 @@
             </ul>
         </div>
         <!-- Objašnjenje
-    HTML struktura:
-    Unutar <div class="logo"> imamo prvo logotip (sliku) zatim kontejner .logo-bottom koji
-    sadrži dva bloka: jedan za pretragu (.search-bar) i drugi za ikone (.icons).
-    CSS raspored:
-    .logo je postavljen u kolonu pomoću flex-direction: column, pa se logo (slika)
-     pojavljuje na vrhu, a ispod njega svi ostali elementi.
-    .logo-bottom je zaseban flex kontejner s flex-direction: row koji raspoređuje
-     pretragu i ikone u jednom redu. Koristili smo justify-content: space-between kako 
-     bi se pretraga pozicionirala levo, a ikone desno.-->
+        HTML struktura:
+        Unutar <div class="logo"> imamo prvo logotip (sliku) zatim kontejner .logo-bottom koji
+        sadrži dva bloka: jedan za pretragu (.search-bar) i drugi za ikone (.icons).
+        CSS raspored:
+       .logo je postavljen u kolonu pomoću flex-direction: column, pa se logo (slika)
+       pojavljuje na vrhu, a ispod njega svi ostali elementi.
+       .logo-bottom je zaseban flex kontejner s flex-direction: row koji raspoređuje
+       pretragu i ikone u jednom redu. Koristili smo justify-content: space-between kako 
+       bi se pretraga pozicionirala levo, a ikone desno.-->
     </header>
     <main>
-        <!--Glavni kontejner za proizvod -->
+        <!-- Glavni kontejner za proizvod -->
         <article class="product-display">
-            <!--Slika proizvoda-->
-            <section class="produkt-image">
-                <img src="300x400.svg" alt="T-Shirt">
-            </section>
-            <!--Naziv proizvoda-->
-            <section class="produkt-info">
+            <!-- Slika proizvoda -->
+            <div class="produkt-image">
+                <img src="Tshirt.svg" alt="T-Shirt">
+            </div>
+            <!-- Informacije o proizvodu (naziv, marka) -->
+            <div class="produkt-info">
                 <h2 class="produkt-name">Svart T-Shirt</h2>
-                <!--Marka proizvoda-->
                 <p class="brand">Levis</p>
-            </section>
-            <!--Opis proizvoda-->
-            <section class="produkt-description">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, ut odit quo libero, tempora
-                    officia id dolore perspiciatis architecto cumque ratione? Laborum, ad! Recusandae nostrum,
-                    necessitatibus nemo quisquam consequuntur sequi.</p>
-            </section>
-            <!--Cijena-->
-            <section class="produkt-pris">
-                <p>199 SEK</p>
-                <button>Lägg i Varukorg</button>
-            </section>
-            </section>
-            </section>
-        </article>
-    </main>
-    <footer>
 
-    </footer>
+                <!-- Opis proizvoda -->
+                <div class="produkt-description">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, ut odit quo libero, tempora
+                        officia id dolore perspiciatis architecto cumque ratione? Laborum, ad! Recusandae nostrum,
+                        necessitatibus nemo quisquam consequuntur sequi.
+                    </p>
+                </div>
+                <!-- Cena i dugme -->
+                <div class="produkt-pris">
+                    <p>199 SEK</p>
+                    <button>Lägg i Varukorg</button>
+                </div>
+            </div>
+        </article>
+
+        <div class="smaikoner">
+            <div class="smal">
+                <img src="globe-americas.svg" alt="Jord">
+                <p>Gratis frakt och retur</p>
+            </div>
+            <div class="smal">
+                <img src="airplane.svg" alt="Flygplan">
+                <p>Express frakt</p>
+            </div>
+            <div class="smal">
+                <img src="shield-fill.svg" alt="Säkerhet">
+                <p>Säkra betalningar</p>
+            </div>
+            <div class="smal">
+                <img src="emoji-smile-fill.svg" alt="Smile">
+                <p>Nyheter varje dag</p>
+            </div>
+        </div>
+
+    </main>
+    <div id="footer">
+        <!-- Mobilni prikaz: struktura sidebar menija (prikazuje se na ekranima ispod 640px)
+         Mobilni prikaz: Struktura je organizovana kao blok koji sadrži dve sekcije
+        – jednu za "Shopping" (sa listom stavki) i jednu za "Mina Sidor".
+        Desktop prikaz: Zadržavaš originalnu HTML tabelu sa dve kolone: leva kolona 
+        "Shopping" i desna kolona "Mina sidor". -->
+        <div class="menu mobile-menu">
+            <div class="menu-section">
+                <h2>Shopping</h2>
+                <ul>
+                    <li>Vinterjackor</li>
+                    <li>Puffjackor</li>
+                    <li>Kappa</li>
+                    <li>Trenchcoats</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <h2>Mina Sidor</h2>
+                <ul>
+                    <li>Mina Ordrar</li>
+                    <li>Mitt Konto</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Desktop prikaz: originalna tabela sa dve kolone (prikazuje se na ekranima sa 
+     širinom 640px i više) -->
+        <table class="menu desktop-menu">
+            <thead>
+                <tr>
+                    <th>Shopping</th>
+                    <th>Mina sidor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Vinterjackor</td>
+                    <td>Mina Ordrar</td>
+                </tr>
+                <tr>
+                    <td>Puffjackor</td>
+                    <td>Mitt Konto</td>
+                </tr>
+                <tr>
+                    <td>Kappa</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Trenchcoats</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&copy; Freaky Fashon</p>
+    </div>
+
 </body>
 
 </html>
