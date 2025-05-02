@@ -13,7 +13,7 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
-  /* sprečava prelamanje teksta*/ 
+  /* sprečava prelamanje teksta*/
   border: 0;
 }
 
@@ -51,6 +51,15 @@ html,
 body {
   height: 100%;
   font-family: 'Courier New', Courier, monospace;
+}
+
+/* Osnovni stilovi (mobil-first pristup) */
+.product-display-extra {
+  display: grid;
+  width: 100%;
+  grid-auto-rows: auto;
+  gap: 10px;
+  padding: 10px;
 }
 
 .product-display-extra {
@@ -141,6 +150,7 @@ header {
 }
 
 .navbar .tags {
+  
   flex-direction: column;
   padding-left: 10px;
   list-style: none;
@@ -319,7 +329,7 @@ li {
   border: solid 2px black;
 }
 
-.produkt-image> img {
+.produkt-image>img {
   align-self: center;
   width: 900px;
   height: 500px;
@@ -342,12 +352,13 @@ li {
   padding-left: 10px;
 }
 
-.produkt-pris> button {
+.produkt-pris>button {
   text-align: center;
   width: 300px;
   height: 30px;
   margin-top: 10px;
 }
+
 .liknande-produkter {
   display: none;
 }
@@ -422,6 +433,7 @@ li {
   /* Navigacija (.navbar .tags) ispod, u jednom redu */
   .navbar .tags {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 15px;
     padding-left: 10px;
@@ -558,6 +570,7 @@ li {
     /* justify-content: center;*/
   }
 
+  /*Ovo sam prebacio iz 640px*/
   .product-display-extra .produkt-image {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -591,6 +604,9 @@ li {
     text-align: right;
     align-self: start;
   }
+
+
+  /*Ovo sam prebacio iz 640px*/
 
   .liknande-produkter {
     display: flex;
@@ -639,6 +655,7 @@ li {
   /* .logo-bottom sada treba biti u jednom redu */
   .logo-bottom {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     flex-grow: 1;
@@ -693,8 +710,6 @@ li {
     display: flex;
     flex-direction: column;
     /* Elementi se raspoređuju jedan ispod drugog */
-    /*justify-content: flex-start; */
-    /* Vertikalno centriranje sadržaja */
     align-items: flex-start;
     /* Poravnanje sadržaja uz levu stranu */
 
@@ -723,6 +738,7 @@ li {
 
   .smaikoner {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
@@ -730,8 +746,134 @@ li {
     padding-bottom: 20px;
     padding-top: 20px;
   }
+
   .desktop-menu {
     display: block;
   }
 
+  .product-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    border: 3px solid green;
+    gap: 10px;
+    row-gap: 10px;
+    background-color: bisque;
+    border: solid 2px black;
+    height: auto;
+  }
+
+  .produkt-image>img {
+    width: 900px;
+    height: auto;
+    border: 1px solid black;
+  }
+
+  .produkt-info {
+    display: flex;
+    flex-direction: column;
+    /* Elementi se raspoređuju jedan ispod drugog */
+    /*justify-content: flex-start; */
+    /* Vertikalno centriranje sadržaja */
+    align-items: flex-start;
+    /* Poravnanje sadržaja uz levu stranu */
+    /* Važno: postavi visinu ako želiš da vertikalno centriranje ima efekta */
+    height: 388px;
+    /* ili konkretna visina, npr.: height: 300px; */
+
+  }
+
+  .produkt-description {
+    padding-left: 30px;
+    align-self: start;
+  }
+
+  .produkt-pris {
+    align-self: start;
+    padding-left: 30px;
+  }
+
+  .produkt-pris>button {
+    text-align: center;
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+  }
+
+  .produkt-info .brand {
+    align-self: start;
+  }
+
+  .liknande-produkter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid blue;
+  }
+}
+
+/* Stilovi za ekrane sa širinom od 1024px ili više */
+@media screen and (min-width: 1024px) {
+  .product-display-extra {
+    height: 610px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .product-display-extra .produkt-image {
+    /* Povećavanje minimalne visine za red sa slikom */
+    grid-template-rows: minmax(300px, auto) minmax(30px, auto);
+    /* Možeš povećati padding za dodatni "prostor" oko sadržaja */
+    /*padding: 20px;*/
+    /* Alternativno, možeš koristiti transformaciju skaliranja */
+    transform: scale(1.1);
+  }
+
+  .product-display-extra .produkt-image img {
+    grid-area: img;
+    width:100%;
+    display: block;
+    height: 450px;
+    /* Povećavanje visine slike kako bi se uklopila u novi raspored */
+    /*height: 400px;*/
+    width: 500%;
+    /*align-self: center;*/
+    padding-top: 10px;
+  }
+  .product-display-extra .produkt-info {
+    grid-area: info;
+    text-align: left;
+    align-self: start;
+  }
+
+  .product-display-extra .produkt-pris {
+    grid-area: pris;
+    text-align: right;
+    align-self: start;
+    font-size: small;
+  }
+
+  /*.product-display-extra .produkt-image .produkt-name {
+    text-align: left;
+   
+    font-size: small;
+    border: 1px solid brown;
+  }*/
+
+  /*{
+    text-align: left;
+    
+    font-size: small;
+    border: 1px solid blue;
+  }*/
+
+ /* .product-display-extra.produkt-image .produkt-pris {
+    text-align: right;
+    font-size: 1rem;
+    border: 1px solid yellow;
+  }*/
 }
