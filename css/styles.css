@@ -145,28 +145,28 @@ header {
 }
 
 .navbar {
+  display: flex;/*dodao zadnje*/
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 3%;
 }
 
 .navbar .tags {
-  
+  display: flex;/*dodao zadnje*/
+  margin: 0;
+  padding: 0 0 0 1%;/*gore,desno,dno,lijevo*/
   flex-direction: column;
-  padding-left: 10px;
   list-style: none;
 }
-
-.navbar ul.tags {
-  display: flex;
-  gap: 3px;
+.navbar .tags li {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 /* Stilovi za sekciju .first */
 .first {
   display: flex;
+  width: auto;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -396,9 +396,10 @@ li {
     width: auto;
   }
 
-  .logo>img {
-    align-items: flex-start;
-    width: 200px;
+  .logo> img {
+    max-width: 100%;
+    align-self: flex-start;
+    width: 223px;
     height: 100px;
   }
 
@@ -410,9 +411,9 @@ li {
   }
 
   .search-bar input {
-    width: 150px;
-    max-width: 200px;
-    padding: 10px;
+    width: /*150px*/110%;
+    max-width: /*200px*/110%;
+    padding: /*10px*/1%;
     border: solid;
     border-radius: 20px;
   }
@@ -445,12 +446,13 @@ li {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: /*20px*/3%;
     border: 3px solid green;
     gap: 10px;
   }
 
   .right img {
+    max-width: 100%;
     width: 600px;
     height: auto;
     border: 1px solid black;
@@ -458,12 +460,12 @@ li {
 
   .left {
     width: 90%;
-    padding: 10px;
+    padding: /*10px*/2%;
     border: 1px solid yellow;
   }
 
   .left>p {
-    padding-top: 10px;
+    padding-top: /*10px*/1%;
   }
 
   .container {
@@ -486,7 +488,7 @@ li {
     justify-content: center;
     width: auto;
     height: auto;
-    /* Fixed height to see the effect of align-content */
+    /*Fiksma visina da se vidi efekat od align-content sadrzaja */
     padding: 0 20px;
     /* 0 za vertikalni padding, 20px za levi i desni padding */
     /*gap: 10px;*/
@@ -496,7 +498,7 @@ li {
   }
 
   .smal>img {
-    padding: 10px;
+    padding: /*10px*/4%;
   }
 
   .mobile-menu {
@@ -531,11 +533,12 @@ li {
     grid-template-columns: repeat(2, 1fr);
     align-items: flex-start;
     gap: 10px;
+    height: 97vh;
   }
 
   .produkt-image {
     margin-left: 10px;
-    margin-top: 10px;
+    margin-top: 1px;
   }
 
   .produkt-name {
@@ -556,25 +559,23 @@ li {
     padding-top: 10px;
     padding-bottom: 20px;
   }
-
   .product-display-extra {
     display: grid;
-    width: 100%;
-    /* Koristi auto visinu kako bi se redovi prilagodili sadržaju */
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Koristi auto visinu kako bi se redovi prilagodili sadržaju */
     grid-auto-rows: auto;
     grid-template-columns: repeat(3, minmax(100px, auto));
-    gap: 10px;
-    /* Razmak između grid itema*/
+    gap: 10px; /* Razmak između grid itema*/
     padding: 10px;
-    /*align-items: center;*/
-    /* justify-content: center;*/
+    height: 45vh;/*420px*/
   }
 
   /*Ovo sam prebacio iz 640px*/
   .product-display-extra .produkt-image {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(260px, auto) minmax(50px, auto);
+    grid-template-rows: minmax(350px, auto) minmax(70px, auto);
     /* prvi red za sliku, drugi red za tekst */
     grid-template-areas:
       "img img"
@@ -582,15 +583,17 @@ li {
     gap: 2px;
     padding: 10px;
     border: 1px solid #ddd;
-    padding-left: 10px;
+    
   }
 
   /* Slika će zauzeti ceo prvi red */
   .product-display-extra .produkt-image img {
     grid-area: img;
-    width: 100%;
+   max-width: 100%;
     display: block;
-    height: 260px;
+    height: 350px;
+    margin: 0 auto;
+    object-fit: cover;
   }
 
   .product-display-extra .produkt-info {
@@ -613,6 +616,7 @@ li {
     align-items: center;
     justify-content: center;
   }
+
 }
 
 /*Media query – uređaji šire od 1024px */
@@ -623,21 +627,22 @@ li {
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 0.5rem;
     /* Primer: 32px */
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 1rem;
     /* Primer: 40px */
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   /* Preuredimo .logo kontejner u horizontalni raspored */
   .logo {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -659,15 +664,16 @@ li {
     flex-direction: row;
     align-items: center;
     flex-grow: 1;
-    margin-left: 20px;
+    margin-left: /*20px*/1%;
     /* mali razmak između loga i ostatka */
   }
 
   /* Pretraživač – koristi ostatak prostora, a desnom strani 
   dodaj razmak */
   .search-bar {
+    /*flex-wrap: wrap;*/
     flex-grow: 1;
-    margin: 0 30px 0 0;
+    margin: 0 /*540px*/ 68% 0 0;
     /* razmak samo s desne strane */
 
   }
@@ -675,7 +681,9 @@ li {
   /* Ikone – poravnaj ih u desni ugao */
   .icons {
     display: flex;
-    justify-content: flex-end;
+    gap: 15px;
+    justify-content: end;
+    /*flex-wrap: wrap;*/
   }
 
   /*Desktop prilagodbe: U media query-ju za 1024px mijenjamo 
@@ -692,10 +700,11 @@ li {
  drugačije u zavisnosti od veličine ekrana, a tvoj kod ostaje čist i modularan.*/
   .first {
     display: flex;
+    width: auto;
     flex-direction: row-reverse;
     justify-content: space-evenly;
     align-items: center;
-    padding: 20px;
+    padding: /*20px*/1%;
     border: 3px solid green;
     gap: 10px;
   }
@@ -725,20 +734,29 @@ li {
 
   .spot-text {
     display: block;
+    margin-bottom: 3%;
   }
 
   .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 20px;
-    flex-grow: 1;
-    margin: 10px;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .item-extra {
+    display: block;
+    align-self: center;   /* centriranje sadržaja vertikalno */
+    justify-self: center; /* centriranje sadržaja horizontalno */
+    margin: 0;
   }
 
   .smaikoner {
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
