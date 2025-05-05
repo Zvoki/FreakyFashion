@@ -134,6 +134,7 @@ header {
 }
 
 .icons>img {
+  max-width: 100%;
   height: 30px;
   cursor: pointer;
 }
@@ -174,6 +175,7 @@ header {
 }
 
 .right img {
+  max-width: 100%;
   width: 100%;
   height: auto;
 }
@@ -200,7 +202,6 @@ header {
   justify-content: space-between;
   align-items: flex-end;
   padding: 4px;
-  background-color: #f9f9f9;
 }
 
 .left-caption {
@@ -422,7 +423,6 @@ li {
   /* Navigacija (.navbar .tags) ispod, u jednom redu */
   .navbar .tags {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
     gap: 15px;
     padding-left: 10px;
@@ -652,7 +652,6 @@ li {
   /* Pretraživač – koristi ostatak prostora, a desnom strani 
   dodaj razmak */
   .search-bar {
-    /*flex-wrap: wrap;*/
     flex-grow: 1;
     margin: 0 /*540px*/ 68% 0 0;
     /* razmak samo s desne strane */
@@ -736,7 +735,6 @@ li {
 
   .smaikoner {
     display: flex;
-    /*flex-wrap: wrap;*/
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
